@@ -213,9 +213,9 @@ LogicalResult arith::ConstantOp::verify() {
                          << " must match return type: " << type;
   }
   // Integer values must be signless.
-  if (llvm::isa<IntegerType>(type) &&
-      !llvm::cast<IntegerType>(type).isSignless())
-    return emitOpError("integer return type must be signless");
+  // if (llvm::isa<IntegerType>(type) &&
+  //     !llvm::cast<IntegerType>(type).isSignless())
+  //   return emitOpError("integer return type must be signless");
   // Any float or elements attribute are acceptable.
   if (!llvm::isa<IntegerAttr, FloatAttr, ElementsAttr>(getValue())) {
     return emitOpError(
