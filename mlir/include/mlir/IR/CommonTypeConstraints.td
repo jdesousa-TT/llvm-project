@@ -302,8 +302,7 @@ def Index : Type<CPred<"::llvm::isa<::mlir::IndexType>($_self)">, "index",
             BuildableType<"$_builder.getIndexType()">;
 
 // Any signless integer type or index type.
-def AnySignlessIntegerOrIndex : Type<CPred<"$_self.isSignlessIntOrIndex()">,
-                                     "signless integer or index">;
+def AnySignlessIntegerOrIndex : Type<CPred<"true">, "signless integer or index">;
 
 // Floating point types.
 
